@@ -1,0 +1,98 @@
+Vapi Setup
+Nodejs set up
+React chrome extension set up
+
+VS Code extensions set up
+
+
+Terminal:
+npx create-next-app@latest ./
+
+Choosed options accoedingly..
+app--> deleted favicon
+       updated other this 
+       frest react set
+
+we are going to use newest tailwind css lately to power it up we will also be using shadcn.ui that provides beautiful designs accessible components that we can pick choose n instet in our application
+
+shadcn.ui setup
+get started 
+-->Next.js
+   installation command paste in vs code
+   npx shadcn@latest init
+   y
+   netural
+   Use --legacy-peer-deps
+
+
+Now deleted the public folder n copied it form yt channels public folder copied constants n types folder in root of my project folder
+constant n types folder contains data that allow us to train our ai to provide better responses
+Constants contains packages that we havent yetr installed myb
+
+
+move faviiocn form public-->app top use globally
+
+
+npm run dev to run the project on our local host
+
+* In next.js by default as soon as u create a folder it automatically gets mapped with the url but if you mark the folder to route group u can prevent the folder to be inculded in the routes URL path allowing your routes into groups and enable nested layouts
+For ROute groups
+(folder name)
+
+
+in app folder 
+created a folder of route group named 
+(auth)
+in that created
+--layout.tsx
+--folder sign-up
+
+
+
+
+
+package.josn
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+
+
+
+
+{
+  "name": "jsm_mock_interview_platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.513.0",
+    "next": "15.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.4",
+    "typescript": "^5"
+  }
+}
