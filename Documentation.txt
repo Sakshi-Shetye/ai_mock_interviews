@@ -4,6 +4,9 @@ React chrome extension set up
 
 VS Code extensions set up
 
+{Next.js,tailwind,react}
+{Google ai studio,vapi voice assistant,shadcn for ui components etc,vercel for deploying the project,firebase (not used but can use httpie for request tesking get & post) i used Thunder client}
+
 
 Terminal:
 npx create-next-app@latest ./
@@ -96,3 +99,238 @@ package.josn
     "typescript": "^5"
   }
 }
+
+*Command to install components*
+npx shadcn@latest add button form input sonner
+
+*Sonner toast is the new version from shadcn*
+
+
+
+"asChild" property which means that the whole button will take the property of child which will be a link since its gonna be clickable
+
+"cn()" property form shadcn this allows you to pass pre-built string, but then also provide a dynamic style such as if index is greater than or equal to 1 then we can render the minsu margin left of there three which will kind of push them together
+
+we can show your own interviews above n below will be the interviews other ppl created
+
+
+
+*Interview Card*
+will will have/show following things:
+rating if interview is already taken
+feedback
+fake pic of company we're trying to interview for 
+[later on you can make this full functional and allow users to upload images to show which company they're applying and also we can show whether its technical or behavioral as well as show description and a button]
+
+*for DATE we will use library called Dayjs to nicely parse the dayjs *
+
+/mix/gi.test(type)? 
+g is for global 
+i is for case insensitive
+
+ Date.now()).format('MMM D,YYYY');=>Mar 15,2024
+MMM - semi long month
+D - Day
+YYYY - Full year
+
+
+TS-TypeScripts
+
+{
+what does this line means?
+<p>{feedback?.totalScore || '---'}/100</p>
+If totalScore can ever be 0, and you want to show 0, this logic would wrongly show '---' because 0 is falsy.
+}
+
+['line-clamp-2 mt-5': will fit the text into 2 lines ]
+
+
+Tooltip is when you hover over smtg for eg icons of programming languages so it tells you which language it is
+
+
+
+*we r using Devicon website to deliever the icons in our website* 
+
+{
+*FIREBASE*
+TWO TYPES OF SDK:
+1. ADMIN SDK- allows secure server side operations
+2. CLIENT SDK- allows direct interaction from web or mobile apps 
+[In the latest versions of Next.js Firebase allows interaction with Server actions and middleware for authentacitation,real-time database managemnet and edge functions for scalibality]
+
+
+Firebase allows you to sign-in using different methods like email google password facebook etc
+
+1:31:27
+
+https://www.mrfdev.com/how-to-use-enhancer-for-youtube
+
+
+*whenever you are in actions file yoy have to turn it into a server rendered file by using the 'use server'; directive at the top of the file*
+
+cmd+p to navigate through files easily
+
+
+
+🔐 Why Server-side Authentication is More Important:
+Reason	Why it matters
+✅ Secure Secrets	Only server can safely store API keys, admin access, DB rights.
+✅ Trustworthy	Server is controlled by you — clients (users) can’t tamper with it.
+✅ Protects Database	Server checks tokens/permissions before doing any DB operations.
+✅ No Exposure	Sensitive logic stays hidden from users (like role checks, validation, etc).
+
+⚠️ What Happens If You Only Use Client-side Authentication:
+Problem	Risk
+❌ Can Be Faked	Hackers can bypass your client logic and fake sign-ins.
+❌ API Calls Are Unprotected	Anyone can hit your DB or APIs directly if you don’t check server-side.
+❌ No Secure Role Checks	Anyone can pretend to be an "admin" if checks are only in the browser.
+
+🔑 Summary:
+Client-side auth is needed to show/hide UI (e.g., sign-in button, dashboard).
+
+Server-side auth is critical to enforce real protection — like DB access, secure routes, and preventing abuse.
+
+💡 Always verify tokens and protect sensitive actions on the server.
+
+
+{
+.env.local
+for 
+FIREBASE_PROJECT_ID="mockpilot-88158"
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC5oRvFajjK21ya\nH2RTZyo+SuBWV5Qfcx9UsE6e2ld1vUzF5csMaVjCKmCmI75WJ+JZph4RFramSnwC\n3SA64XNoRmvayOZKttM8zWvI8JWJnWB2Rykjv4Ne35CL2iHYDV2FQIvIRANtODyi\nTOfS+msEWNv1n32Zgjhisd2KbUUW1xc63XnY6wCjskhq8iPPgC/M8EiBrZSDP+PK\nFlZDcBXcO81lVEmqgeA0DpNFWxnLk8Q5Aze4QkQ64FziwisjZYMkrRnJ/z5xB2SD\ngFTMo5Ct9Yxp6Y3YmWWRGtgtKPt3afSVHRQbKkfCRfAcTvEhAMs+kZfwiQACznGU\nb7Of+iqHAgMBAAECggEAKrV5JMIsP+wZkbJQTGori3qBxAvRXi0IE92esSjOP54m\nuE+HGJtyWvYSF5eYtszlZLf2KfteWcNAZg5HWJS/j0nIjeV0KtOGpXIj7u7/kNJ/\nO6divUFWcfEhGjQ9Xi6xCjQQFSsk2K+8L6FfIykPj0f8j7Y62SNfYsHGlY9PepHs\n81gl/8835fEYUE+toxXBgaqx3M4KxhJ5N+l55uFTFaEWiG69xnSK3TqEO32o8wbx\nqSuVgNCF4ixkYQpno0b9EL9AFQRXWhryNcqTMB2zIEW9505aRyo4XVKG7DYOI6ZF\n59IlKrLogLkJhO2Y5ALWrbg2jmn9/oIIeL9dMFjwnQKBgQDjw+Z17MIyjKStEpmi\ntljBN+P9IBP1Prv7g5HqlYZmpowhPAqvECnz0fU5Tw7JcNqJiLCB4j5tiKMTIpk8\nCazG4xMaq9pV723hUnlMRitTJ0/D/7JtJ4qYen3PyMPsIUyX+xL5wRk1aR6VXi23\nFzrKGOaX+gx8PCC4+7K+vFh+TQKBgQDQpAfk2GbqM91X0UMJZnKF9kSgWMPG10rz\nR25GtmxhV3xymyuIXYpeFmfMTrzEeJKGbu/24TYfo1qKO8dvk7as3KM6Fe2fSCZw\noXd6TIJjkt+1TAzGbcQqiJQu5NC6LkCUziBlH/EdshmOTg6n82JiSOPpzfwn0NSz\n1oxzuhN+IwKBgA+shYmL93k/EH4Qj54Q6l6xl/DtajIwVQNj9ICuNYeO4onO9fVC\nKYDr6/I7rIrUR1W7oFnv1df31TEV6nGlQMyXB9OIDAhp56ff4xUKpySbyfN0/zRf\nyjvgAhRwfnsbd4fl8VJapX91cnNY/dBhutv5hrTiskVCZgYU3CIgF/7pAoGAJ8wy\nKUfSEbiE7xxekit1ivIX0xI7ffFRPaiRc3GWqNa8SUwp+KAHJb1WXVVjkoKBSJ1e\nrpP09AH/4kBW4YSmosCPbiQCqJBlrLRQCwcPFBlPDNEN2sfTVF2rDmrdGbZ64SeU\nbFW0c3qmf0uKZiT5zk+jEdUV1S5zdD5nmieTUksCgYBaJRgcncm/HNZErD1UXmkd\nva1Te3QMD2OxJDCCZD4FCz93kL6j3Hz+SKFS9vAVuAtX29YdIWxcTYuIYo7fob+Q\nkyJF3BnfOrodIBTyF1HKEOuIyEQOmdBSWFU2NvlTLhNPUy+YdcvEY6fNf6Jc5wVQ\naWI77riEOIOjOtINK/GtoQ==\n-----END PRIVATE KEY-----\n",
+FIREBASE_CLIENT_EMAIL= "firebase-adminsdk-fbsvc@mockpilot-88158.iam.gserviceaccount.com",
+
+
+
+to work you must remove the ',' which is in the last.
+}
+
+{
+to convert a truthy or falsey value to a boolean variable we use !! double exclamation}
+
+{
+THE WAY IN WHICH WE WILL CONSUME GEMINI AI IS BY USING AI SDK PROVIDED BY VERCEL it allows u to integrate any kind of large language model into your application without depending on the specific provider you use. The code will look the same  for which ever provider you choose
+}
+
+
+
+[
+WE COLLECT USER RESPONSES LIKE 
+TYPE OF INTERVIEW IE. FRONTEND OR BACKEND OR BEHAVIOURIAL ETC
+LANGUAGES ETC
+THEN AI ASSISTANT WILL FEED IT IT GEMINI AI TO GENERATE AI QUESTIONS BASED ON USER CHOICES N THEN STORE THIS INFORMATION IN A FIRESTORE DATABASE THIS STORAGE WILL ENABLE US TO DISPLAY THE GATHERD DATA ON THE BASHBOARD SO WE CAN ANALYZE IT IN MORE DETAIL]
+[
+1. FIRST THE USER WILL INITIATE A CALL WITH THE AI ASSISTANT WHICH IS     STRUCTURED USING THE VAPI WORKFLOWS
+2. THE ASSISTANT WILL THEN ASK A SERIES OF PREDEFINED QUESTIONS COLLEING THE USER'S RESPONSES
+3. ONES ALL QUESTIONS ARE ANSWERED THE ASSISTANT WILL END THE CALL AND SEND THE COLLECTED INFORMATION TO OUR API ENDPOINT
+4. THE API WILL THEN FEED THIS INFO OVER TO GEMINI 
+5. THE GEMINI WILL GIVE THE RESPONSE BACK TO THE API
+6. THEN API WILL STORE THE DATA IN THE FIRESTORE DATABASE]
+
+
+{---------------------------------------------------------------------------}
+
+WE SOMEHOW HAVE TO TEST THIS ROUTE
+
+export async function GET() {
+    return Response.json({ success:true, data:'THANK YOU'}, {status: 200 });
+} 
+
+FOR THAT WE NEED SOME KIND OF HTTP CLIENT 
+EG: POSTMAN,INSOMNIA
+WE WILL USE
+
+[httpie] - simple to use, its a super lightweight http client 
+u can run it completely in the browser also
+{---------------------------------------------------------------------------}
+
+
+{___________________________________________________________________________}
+✅ Deploy with Vercel Website + GitHub (No installations needed)
+🌐 What you need:
+A GitHub account (you already have)
+
+Your project pushed to GitHub
+
+A Vercel account (you can sign up with GitHub)
+
+🚀 Step-by-Step Guide
+✅ Step 1: Push your project to GitHub
+Make sure your project is in a GitHub repository.
+
+If not yet done:
+
+bash
+Copy code
+git init
+git add .
+git commit -m "initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+✅ Step 2: Go to https://vercel.com
+✅ Step 3: Sign in with GitHub
+Click "Continue with GitHub"
+
+Authorize Vercel to access your GitHub account
+
+Vercel will ask you to install their GitHub App
+
+👉 When it does:
+
+Choose “Only select repositories”
+
+Select the repo where your project is
+
+Click Install & Authorize
+
+✅ This does NOT install anything on your laptop — it just gives Vercel access to that repo.
+
+✅ Step 4: Import your GitHub Repo
+Once logged in, Vercel will show an option: “Import Git Repository”
+
+Choose your project repo from the list
+
+✅ Step 5: Configure Project
+Vercel will detect your framework automatically (Next.js, React, etc.)
+
+You can leave defaults as-is (like build command: next build and output: .next)
+
+Click “Deploy”
+
+✅ Step 6: Done 🎉
+Vercel will build and deploy your project
+
+You’ll get a live link like: https://your-project.vercel.app
+
+🔁 Future changes?
+Just push to GitHub → Vercel will auto-deploy again.
+{___________________________________________________________________________}
+
+
+2:30:25
+
+
+✅ Post-Deployment Checklist
+Custom Domain (Optional but Pro-level)
+Use your own domain instead of the Vercel subdomain (e.g., aimockinterviews.com).
+
+Analytics (Know your visitors)
+Add Vercel Analytics or Google Analytics to track visits and engagement.
+
+SEO Optimization
+Make sure your <head> tags (title, meta, etc.) are optimized for search engines.
+
+Responsiveness Check
+Use Chrome DevTools to check your app on different screen sizes (mobiles/tablets).
+
+Performance Tuning
+You can run Lighthouse audit on Chrome to test speed, accessibility, SEO, and more.
+
+Authentication Handling
+Try signing in, refreshing, and signing out — make sure session handling is solid (you’ve already used Firebase, so that’s a great base).
+
+UI Polish
+First impressions matter. If it’s for users/employers, make sure your design feels sharp and confident.
+
+
